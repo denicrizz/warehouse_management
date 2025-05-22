@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707879388515",
+    "project_id": "warehouse-management-30c7a",
+    "storage_bucket": "warehouse-management-30c7a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707879388515:android:d3a7de8605c0d7af443f56",
+        "android_client_info": {
+          "package_name": "com.arijayacloud.warehouse_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD17J3OikiKDt0si2denieaHPBGY31LOh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
