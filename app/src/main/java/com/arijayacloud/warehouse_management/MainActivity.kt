@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.arijayacloud.warehouse_management.firebase.FirebaseService
+import com.arijayacloud.warehouse_management.ui.RiwayatBarangMasukScreen
 import com.arijayacloud.warehouse_management.ui.theme.Warehouse_managementTheme
 import java.text.SimpleDateFormat
 import java.util.*
@@ -65,6 +66,7 @@ fun WarehouseApp() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                RiwayatBarangMasukScreen()
                 Text("Warehouse Management", style = MaterialTheme.typography.headlineSmall)
             }
         }

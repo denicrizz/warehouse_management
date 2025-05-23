@@ -9,7 +9,7 @@ import java.util.*
 
 object FirebaseService {
 
-    private val db = FirebaseFirestore.getInstance().apply {
+    val db = FirebaseFirestore.getInstance().apply {
         // Aktifkan offline persistence agar data bisa diakses meskipun offline
         firestoreSettings = FirebaseFirestoreSettings.Builder()
             .setPersistenceEnabled(true)
@@ -282,6 +282,23 @@ object FirebaseService {
             }
             .addOnFailureListener { exception ->
                 Log.e("FirebaseService", "Error hapus barang: ", exception)
+                onFailure(exception)
+            }
+    }
+    fun getAllTransaksiMasuk(
+        onSuccess: (List<Transaksi>) -> Unit,
+        onFailure: (Exception) -> Unit
+    ) {
+        db.collection("transaksi")
+            .whereEqualTo("jenis", "masuk")
+            .orderBy("tanggal", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener { documents ->
+                val transaksiList = documents.mapNotNull { it.toObject(Transaksi::class.java) }
+                onSuccess(transaksiList)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("FirebaseService", "Error get transaksi masuk: ", exception)
                 onFailure(exception)
             }
     }
